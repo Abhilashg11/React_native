@@ -7,6 +7,7 @@ import Users from '../screens/Users'
 import AddUser from '../screens/AddUser'
 import Tabs from './tabs'
 import Profile from './profile';
+import { Ionicons} from '@expo/vector-icons'
 
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -23,8 +24,12 @@ const AppNavigator = () => {
         <Tab.Navigator screenOptions={{headerShown:false}}>
         
             
-            <Tab.Screen name="Summary" component={StackNavigator}/>
-            <Tab.Screen name="AddUser" component={Profile}/>
+            <Tab.Screen name="Summary" component={StackNavigator} options={{
+            tabBarIcon: <ion-icon name="notification"></ion-icon>
+          }}/>
+            <Tab.Screen name="AddUser" component={Profile} options={{
+            tabBarIcon: ()=><Ionicons name="person"></Ionicons >,
+          }}/>
 
         </Tab.Navigator>
    
